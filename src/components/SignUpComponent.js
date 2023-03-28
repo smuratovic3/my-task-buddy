@@ -11,13 +11,17 @@ export default class SignUp extends Component {
           <input
             type="text"
             className="form-control"
-            placeholder="First name"
+            placeholder="Unesite ime"
           />
         </div>
 
         <div className="mb-3">
           <label>PREZIME</label>
-          <input type="text" className="form-control" placeholder="Last name" />
+          <input
+            type="text"
+            className="form-control"
+            placeholder="Unesite prezime"
+          />
         </div>
 
         <div className="mb-3">
@@ -25,7 +29,7 @@ export default class SignUp extends Component {
           <input
             type="text"
             className="form-control"
-            placeholder="Name and surname of the user"
+            placeholder="Unesite ime i prezime korisnika planera"
           />
         </div>
 
@@ -34,7 +38,7 @@ export default class SignUp extends Component {
           <input
             type="email"
             className="form-control"
-            placeholder="Enter email"
+            placeholder="Unesite email"
           />
         </div>
 
@@ -43,7 +47,7 @@ export default class SignUp extends Component {
           <input
             type="password"
             className="form-control"
-            placeholder="Enter password"
+            placeholder="Unesite lozinku"
           />
         </div>
 

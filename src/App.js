@@ -1,11 +1,10 @@
 import React from "react";
 import "bootstrap/dist/css/bootstrap.min.css";
-
 import "./App.css";
 import { BrowserRouter as Router, Routes, Route, Link } from "react-router-dom";
-
 import Login from "./components/LoginComponent";
 import SignUp from "./components/SignUpComponent";
+import ForgotPassword from "./components/ForgotPassword";
 
 function App() {
   return (
@@ -47,6 +46,7 @@ function App() {
               <Route exact path="/" element={<Login />} />
               <Route path="/sign-in" element={<Login />} />
               <Route path="/sign-up" element={<SignUp />} />
+              <Route path="/forgot-password" element={<ForgotPassword />} />
             </Routes>
           </div>
         </div>

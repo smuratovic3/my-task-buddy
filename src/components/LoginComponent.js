@@ -1,4 +1,5 @@
 import React, { Component } from "react";
+import { Link } from "react-router-dom";
 
 export default class Login extends Component {
   render() {
@@ -8,7 +9,11 @@ export default class Login extends Component {
 
         <div className="mb-3">
           <label>IME</label>
-          <input type="ime" className="form-control" placeholder="Enter name" />
+          <input
+            type="ime"
+            className="form-control"
+            placeholder="Unesite ime"
+          />
         </div>
 
         <div className="mb-3">
@@ -16,7 +21,7 @@ export default class Login extends Component {
           <input
             type="prezime"
             className="form-control"
-            placeholder="Enter surname"
+            placeholder="Unesite prezime"
           />
         </div>
 
@@ -25,7 +30,7 @@ export default class Login extends Component {
           <input
             type="email"
             className="form-control"
-            placeholder="Enter email"
+            placeholder="Unesite email"
           />
         </div>
 
@@ -34,7 +39,7 @@ export default class Login extends Component {
           <input
             type="lozinka"
             className="form-control"
-            placeholder="Enter password"
+            placeholder="Unesite lozinku"
           />
         </div>
 
@@ -52,7 +57,7 @@ export default class Login extends Component {
           </button>
         </div>
         <p className="forgot-password text-right">
-          Zaboravili ste <a href="#">lozinku?</a>
+          Zaboravili ste <Link to="/forgot-password">lozinku?</Link>
         </p>
       </form>
     );
