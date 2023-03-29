@@ -45,7 +45,9 @@ export default class Login extends Component {
 
         <div className="d-grid">
           <button type="submit" className="btn btn-success">
-            Prijavi se
+            <Link className="nav-link" to={"/home-page"}>
+              Prijavi se
+            </Link>
           </button>
         </div>
         <label className="custom-control-label" htmlFor="customCheck1">
@@ -53,7 +55,9 @@ export default class Login extends Component {
         </label>
         <div className="d-grid">
           <button type="submit" className="btn btn-danger">
-            Registruj se
+            <Link className="nav-link" to={"/sign-up"}>
+              Registruj se
+            </Link>
           </button>
         </div>
         <p className="forgot-password text-right">

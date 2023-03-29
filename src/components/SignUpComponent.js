@@ -1,4 +1,5 @@
 import React, { Component } from "react";
+import { Link } from "react-router-dom";
 
 export default class SignUp extends Component {
   render() {
@@ -66,7 +67,9 @@ export default class SignUp extends Component {
 
         <div className="d-grid">
           <button type="submit" className="btn btn-danger">
-            Registruj se
+            <Link className="nav-link" to={"/home-page"}>
+              Registruj se
+            </Link>
           </button>
         </div>
         <p className="forgot-password text-right">
