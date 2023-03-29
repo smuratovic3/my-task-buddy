@@ -26,15 +26,6 @@ export default class SignUp extends Component {
         </div>
 
         <div className="mb-3">
-          <label>IME I PREZIME KORISNIKA PLANERA</label>
-          <input
-            type="text"
-            className="form-control"
-            placeholder="Unesite ime i prezime korisnika planera"
-          />
-        </div>
-
-        <div className="mb-3">
           <label>E-MAIL ADRESA</label>
           <input
             type="email"
