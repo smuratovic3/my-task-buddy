@@ -6,6 +6,7 @@ import Login from "./components/LoginComponent";
 import SignUp from "./components/SignUpComponent";
 import ForgotPassword from "./components/ForgotPassword";
 import HomePage from "./components/HomePageComponent";
+import "./App.css";
 
 function App() {
   return (
