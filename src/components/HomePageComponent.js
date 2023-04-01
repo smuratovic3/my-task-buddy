@@ -7,7 +7,6 @@ import { Calendar, dateFnsLocalizer } from "react-big-calendar";
 import "react-big-calendar/lib/css/react-big-calendar.css";
 import DatePicker from "react-datepicker";
 import "react-datepicker/dist/react-datepicker.css";
-import "../css/HomePage.css";
 
 const locales = {
   "en-US": require("date-fns/locale/en-US"),
@@ -24,23 +23,13 @@ export default class HomePageComponent extends Component {
   constructor(props) {
     super(props);
     this.state = {
-      newEvent: { title: "", start: "", end: "" },
+      newEvent: { title: "", start: "", end: "", username: "" },
       allEvents: [
         {
-          title: "Big Meeting",
+          title: "Uraditi zadaću",
           allDay: true,
-          start: new Date(2021, 6, 0),
-          end: new Date(2021, 6, 0),
-        },
-        {
-          title: "Vacation",
-          start: new Date(2021, 6, 7),
-          end: new Date(2021, 6, 10),
-        },
-        {
-          title: "Conference",
-          start: new Date(2021, 6, 20),
-          end: new Date(2021, 6, 23),
+          start: new Date(2023, 4, 1),
+          end: new Date(2023, 4, 4),
         },
       ],
     };
@@ -56,15 +45,15 @@ export default class HomePageComponent extends Component {
       const d3 = new Date(allEvents[i].end);
       const d4 = new Date(newEvent.end);
 
-      if ((d1 <= d2 && d2 <= d3) || (d1 <= d4 && d4 <= d3)) {
+      /*if ((d1 <= d2 && d2 <= d3) || (d1 <= d4 && d4 <= d3)) {
         alert("CLASH");
         break;
-      }
+      }*/
     }
 
     this.setState({
       allEvents: [...allEvents, newEvent],
-      newEvent: { title: "", start: "", end: "" },
+      newEvent: { title: "", start: "", end: "", username: "" },
     });
   }
 
@@ -73,12 +62,12 @@ export default class HomePageComponent extends Component {
 
     return (
       <div className="HomePage">
-        <h1>Calendar</h1>
-        <h2>Add New Event</h2>
+        <h1>Kalendar</h1>
+        <h2>Dodaj aktivnost</h2>
         <div>
           <input
             type="text"
-            placeholder="Add Title"
+            placeholder="Naslov"
             style={{ width: "20%", marginRight: "10px" }}
             value={newEvent.title}
             onChange={(e) =>
@@ -88,7 +77,7 @@ export default class HomePageComponent extends Component {
             }
           />
           <DatePicker
-            placeholderText="Start Date"
+            placeholderText="Datum početka "
             style={{ marginRight: "10px" }}
             selected={newEvent.start}
             onChange={(start) =>
@@ -96,14 +85,26 @@ export default class HomePageComponent extends Component {
             }
           />
           <DatePicker
-            placeholderText="End Date"
+            placeholderText="Datum završetka "
             selected={newEvent.end}
             onChange={(end) =>
               this.setState({ newEvent: { ...newEvent, end } })
             }
           />
+          <input
+            type="text"
+            placeholder="Unesite ime korisnika"
+            style={{ width: "20%", marginRight: "10px" }}
+            value={newEvent.username}
+            onChange={(e) =>
+              this.setState({
+                newEvent: { ...newEvent, username: e.target.value },
+              })
+            }
+          />
+
           <button style={{ marginTop: "10px" }} onClick={this.handleAddEvent}>
-            Add Event
+            Dodaj aktivnost
           </button>
         </div>
         <Calendar
@@ -111,7 +112,7 @@ export default class HomePageComponent extends Component {
           events={allEvents}
           startAccessor="start"
           endAccessor="end"
-          style={{ height: 600, margin: "-200px" }}
+          style={{ height: 600, margin: "10px" }}
         />
       </div>
     );
