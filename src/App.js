@@ -6,6 +6,7 @@ import Login from "./screens/LoginComponent";
 import SignUp from "./screens/SignUpComponent";
 import ForgotPassword from "./screens/ForgotPassword";
 import HomePage from "./screens/HomePageComponent";
+import "./index.css";
 
 function App() {
   return (
@@ -41,17 +42,13 @@ function App() {
           </div>
         </nav>
 
-        <div className="auth-wrapper">
-          <div className="auth-inner">
-            <Routes>
-              <Route exact path="/" element={<Login />} />
-              <Route path="/sign-in" element={<Login />} />
-              <Route path="/sign-up" element={<SignUp />} />
-              <Route path="/forgot-password" element={<ForgotPassword />} />
-              <Route path="/home-page" element={<HomePage />} />
-            </Routes>
-          </div>
-        </div>
+        <Routes>
+          <Route exact path="/" element={<Login />} />
+          <Route path="/sign-in" element={<Login />} />
+          <Route path="/sign-up" element={<SignUp />} />
+          <Route path="/forgot-password" element={<ForgotPassword />} />
+          <Route path="/home-page" element={<HomePage />} />
+        </Routes>
       </div>
     </Router>
   );

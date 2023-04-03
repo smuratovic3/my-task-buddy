@@ -7,6 +7,7 @@ import { Calendar, dateFnsLocalizer } from "react-big-calendar";
 import "react-big-calendar/lib/css/react-big-calendar.css";
 import DatePicker from "react-datepicker";
 import "react-datepicker/dist/react-datepicker.css";
+import HomePageCSS from "../css/homepage.module.css";
 
 const locales = {
   "en-US": require("date-fns/locale/en-US"),
@@ -62,58 +63,65 @@ export default class HomePageComponent extends Component {
 
     return (
       <div className="HomePage">
-        <h1>Kalendar</h1>
-        <h2>Dodaj aktivnost</h2>
-        <div>
-          <input
-            type="text"
-            placeholder="Naslov"
-            style={{ width: "20%", marginRight: "10px" }}
-            value={newEvent.title}
-            onChange={(e) =>
-              this.setState({
-                newEvent: { ...newEvent, title: e.target.value },
-              })
-            }
-          />
-          <DatePicker
-            placeholderText="Datum početka "
-            style={{ marginRight: "10px" }}
-            selected={newEvent.start}
-            onChange={(start) =>
-              this.setState({ newEvent: { ...newEvent, start } })
-            }
-          />
-          <DatePicker
-            placeholderText="Datum završetka "
-            selected={newEvent.end}
-            onChange={(end) =>
-              this.setState({ newEvent: { ...newEvent, end } })
-            }
-          />
-          <input
-            type="text"
-            placeholder="Unesite ime korisnika"
-            style={{ width: "20%", marginRight: "10px" }}
-            value={newEvent.username}
-            onChange={(e) =>
-              this.setState({
-                newEvent: { ...newEvent, username: e.target.value },
-              })
-            }
-          />
+        <div className={HomePageCSS.wrapper}>
+          <div className={HomePageCSS.inner}>
+            <h1>Kalendar</h1>
+            <h2>Dodaj aktivnost</h2>
+            <div>
+              <input
+                type="text"
+                placeholder="Naslov"
+                style={{ width: "20%", marginRight: "10px" }}
+                value={newEvent.title}
+                onChange={(e) =>
+                  this.setState({
+                    newEvent: { ...newEvent, title: e.target.value },
+                  })
+                }
+              />
+              <DatePicker
+                placeholderText="Datum početka "
+                style={{ marginRight: "10px" }}
+                selected={newEvent.start}
+                onChange={(start) =>
+                  this.setState({ newEvent: { ...newEvent, start } })
+                }
+              />
+              <DatePicker
+                placeholderText="Datum završetka "
+                selected={newEvent.end}
+                onChange={(end) =>
+                  this.setState({ newEvent: { ...newEvent, end } })
+                }
+              />
+              <input
+                type="text"
+                placeholder="Unesite ime korisnika"
+                style={{ width: "20%", marginRight: "10px" }}
+                value={newEvent.username}
+                onChange={(e) =>
+                  this.setState({
+                    newEvent: { ...newEvent, username: e.target.value },
+                  })
+                }
+              />
 
-          <button style={{ marginTop: "10px" }} onClick={this.handleAddEvent}>
-            Dodaj aktivnost
-          </button>
+              <button
+                style={{ marginTop: "10px" }}
+                onClick={this.handleAddEvent}
+              >
+                Dodaj aktivnost
+              </button>
+            </div>
+            <Calendar
+              localizer={localizer}
+              events={allEvents}
+              startAccessor="start"
+              endAccessor="end"
+              style={{ height: 600, margin: "10px" }}
+            />
+          </div>
         </div>
-        <Calendar
-          localizer={localizer}
-          events={allEvents}
-          startAccessor="start"
-          endAccessor="end"
-          style={{ height: 600, margin: "10px" }}
-        />
       </div>
     );
   }
