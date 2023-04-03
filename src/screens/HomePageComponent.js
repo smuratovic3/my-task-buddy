@@ -45,10 +45,10 @@ export default class HomePageComponent extends Component {
       const d3 = new Date(allEvents[i].end);
       const d4 = new Date(newEvent.end);
 
-      /*if ((d1 <= d2 && d2 <= d3) || (d1 <= d4 && d4 <= d3)) {
+      if ((d1 <= d2 && d2 <= d3) || (d1 <= d4 && d4 <= d3)) {
         alert("CLASH");
         break;
-      }*/
+      }
     }
 
     this.setState({

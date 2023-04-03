@@ -2,11 +2,10 @@ import React from "react";
 import "bootstrap/dist/css/bootstrap.min.css";
 import "./App.css";
 import { BrowserRouter as Router, Routes, Route, Link } from "react-router-dom";
-import Login from "./components/LoginComponent";
-import SignUp from "./components/SignUpComponent";
-import ForgotPassword from "./components/ForgotPassword";
-import HomePage from "./components/HomePageComponent";
-import "./App.css";
+import Login from "./screens/LoginComponent";
+import SignUp from "./screens/SignUpComponent";
+import ForgotPassword from "./screens/ForgotPassword";
+import HomePage from "./screens/HomePageComponent";
 
 function App() {
   return (
