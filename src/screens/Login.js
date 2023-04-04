@@ -6,6 +6,30 @@ export default class Login extends Component {
   render() {
     return (
       <form>
+        <nav className="navbar navbar-expand-lg navbar-light fixed-top">
+          <Link className="navbar-brand" to={"/sign-in"}>
+            <img
+              src="/assets/images/logo.png"
+              alt="MyTaskBuddy Logo"
+              width="30"
+              height="30"
+            />
+            MyTaskBuddy
+          </Link>
+
+          <ul className="navbar-nav ml-auto">
+            <li className="nav-item">
+              <Link className="nav-link" to={"/sign-in"}>
+                Prijavi se
+              </Link>
+            </li>
+            <li className="nav-item">
+              <Link className="nav-link" to={"/sign-up"}>
+                Registruj se
+              </Link>
+            </li>
+          </ul>
+        </nav>
         <div className={LoginCSS.wrapper}>
           <div className={LoginCSS.inner}>
             <div className="headline">
@@ -50,17 +74,26 @@ export default class Login extends Component {
 
             <div className="d-grid">
               <button type="submit" className="btn btn-success">
-                <Link className="nav-link" to={"/home-page"}>
+                <Link
+                  className="link"
+                  to={"/home-page"}
+                  style={{ color: "white" }}
+                >
                   Prijavi se
                 </Link>
               </button>
             </div>
+
             <label className="custom-control-label" htmlFor="customCheck1">
               Nemate račun?
             </label>
             <div className="d-grid">
               <button type="submit" className="btn btn-danger">
-                <Link className="nav-link" to={"/sign-up"}>
+                <Link
+                  className="nav-link"
+                  to={"/sign-up"}
+                  style={{ color: "white" }}
+                >
                   Registruj se
                 </Link>
               </button>

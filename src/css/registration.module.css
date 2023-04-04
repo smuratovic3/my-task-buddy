@@ -23,6 +23,8 @@ span {
   font-family: "Fira Sans", sans-serif;
 }
 
+
+
 body,
 html,
 .App,
@@ -30,6 +32,45 @@ html,
 .wrapper {
   width: 100%;
   height: 100%;
+}
+
+.navbar {
+  background-color: #ffffff; /* sets the background color of the navbar */
+  padding: 20px; /* adds padding to the navbar */
+  box-shadow: 0 0 10px rgba(0,0,0,0.1); /* adds a box shadow effect to the navbar */
+  position: fixed; /* fixes the navbar at the top of the viewport */
+  top: 0; /* sets the top position of the navbar to 0 */
+  width: 100%; /* sets the width of the navbar to 100% */
+  z-index: 1; /* sets the z-index of the navbar to 1 */
+}
+
+.navbar-expand-lg {
+  display: flex; /* sets the navbar to display as a flexbox */
+}
+
+.navbar-light {
+  color: #ffffff; /* sets the color of the navbar text to white */
+}
+
+.navbar-nav {
+  margin-left: auto; /* aligns the navbar items to the right */
+}
+
+.nav-item {
+  margin-right: 30px; /* adds spacing between the navbar items */
+}
+
+.nav-link {
+  color: #000000; /* sets the color of the navbar links to black */
+  text-decoration: none; /* removes underline from navbar links */
+}
+
+.nav-link:hover {
+  color: #007bff; /* sets the color of the navbar links on hover to blue */
+}
+
+.navbar-brand{
+  background-color: rgb(255, 255, 255);
 }
 
 .navbar-light {
@@ -60,10 +101,7 @@ html,
   transform: translate(-50%, -50%);
 }
 
-.wrapper .form-control:focus {
-  border-color: #167bff;
-  box-shadow: none;
-}
+
 
 .wrapper h3 {
   text-align: center;

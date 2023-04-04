@@ -6,6 +6,7 @@ import startOfWeek from "date-fns/startOfWeek";
 import { Calendar, dateFnsLocalizer } from "react-big-calendar";
 import "react-big-calendar/lib/css/react-big-calendar.css";
 import DatePicker from "react-datepicker";
+import { Link } from "react-router-dom";
 import "react-datepicker/dist/react-datepicker.css";
 import HomePageCSS from "../css/homepage.module.css";
 
@@ -62,67 +63,103 @@ export default class HomePageComponent extends Component {
     const { newEvent, allEvents } = this.state;
 
     return (
-      <div className="HomePage">
-        <div className={HomePageCSS.wrapper}>
-          <div className={HomePageCSS.inner}>
-            <h1>Kalendar</h1>
-            <h2>Dodaj aktivnost</h2>
-            <div>
-              <input
-                type="text"
-                placeholder="Naslov"
-                style={{ width: "20%", marginRight: "10px" }}
-                value={newEvent.title}
-                onChange={(e) =>
-                  this.setState({
-                    newEvent: { ...newEvent, title: e.target.value },
-                  })
-                }
-              />
-              <DatePicker
-                placeholderText="Datum početka "
-                style={{ marginRight: "10px" }}
-                selected={newEvent.start}
-                onChange={(start) =>
-                  this.setState({ newEvent: { ...newEvent, start } })
-                }
-              />
-              <DatePicker
-                placeholderText="Datum završetka "
-                selected={newEvent.end}
-                onChange={(end) =>
-                  this.setState({ newEvent: { ...newEvent, end } })
-                }
-              />
-              <input
-                type="text"
-                placeholder="Unesite ime korisnika"
-                style={{ width: "20%", marginRight: "10px" }}
-                value={newEvent.username}
-                onChange={(e) =>
-                  this.setState({
-                    newEvent: { ...newEvent, username: e.target.value },
-                  })
-                }
-              />
-
-              <button
-                style={{ marginTop: "10px" }}
-                onClick={this.handleAddEvent}
-              >
-                Dodaj aktivnost
-              </button>
-            </div>
-            <Calendar
-              localizer={localizer}
-              events={allEvents}
-              startAccessor="start"
-              endAccessor="end"
-              style={{ height: 600, margin: "10px" }}
+      <form>
+        <nav className="navbar navbar-expand-lg navbar-light fixed-top">
+          <Link className="navbar-brand" to={"/sign-in"}>
+            <img
+              src="/assets/images/logo.png"
+              alt="MyTaskBuddy Logo"
+              width="30"
+              height="30"
             />
+            MyTaskBuddy
+          </Link>
+
+          <ul className="navbar-nav ml-auto">
+            <li className="nav-item">
+              <Link className="nav-link" to={"/home-page"}>
+                Početna
+              </Link>
+            </li>
+            <li className="nav-item">
+              <Link className="nav-link" to={"/my-profil"}>
+                Profil
+              </Link>
+            </li>
+            <li className="nav-item">
+              <Link className="nav-link" to={"/statistics"}>
+                Statistika
+              </Link>
+            </li>
+            <li className="nav-item">
+              <Link className="nav-link" to={"/sign-in"}>
+                ODJAVA
+              </Link>
+            </li>
+          </ul>
+        </nav>
+        <div className="HomePage">
+          <div className={HomePageCSS.wrapper}>
+            <div className={HomePageCSS.inner}>
+              <h1>Kalendar</h1>
+              <h2>Dodaj aktivnost</h2>
+              <div>
+                <input
+                  type="text"
+                  placeholder="Naslov"
+                  style={{ width: "20%", marginRight: "10px" }}
+                  value={newEvent.title}
+                  onChange={(e) =>
+                    this.setState({
+                      newEvent: { ...newEvent, title: e.target.value },
+                    })
+                  }
+                />
+                <DatePicker
+                  placeholderText="Datum početka "
+                  style={{ marginRight: "10px" }}
+                  selected={newEvent.start}
+                  onChange={(start) =>
+                    this.setState({ newEvent: { ...newEvent, start } })
+                  }
+                />
+                <DatePicker
+                  placeholderText="Datum završetka "
+                  selected={newEvent.end}
+                  onChange={(end) =>
+                    this.setState({ newEvent: { ...newEvent, end } })
+                  }
+                />
+                <input
+                  type="text"
+                  placeholder="Unesite ime korisnika"
+                  style={{ width: "20%", marginRight: "10px" }}
+                  value={newEvent.username}
+                  onChange={(e) =>
+                    this.setState({
+                      newEvent: { ...newEvent, username: e.target.value },
+                    })
+                  }
+                />
+
+                <button
+                  style={{ marginTop: "10px" }}
+                  onClick={this.handleAddEvent}
+                >
+                  Dodaj aktivnost
+                </button>
+              </div>
+              <Calendar
+                localizer={localizer}
+                events={allEvents}
+                startAccessor="start"
+                endAccessor="end"
+                style={{ height: 600, margin: "10px" }}
+              />
+            </div>
           </div>
         </div>
-      </div>
+      </form>
     );
   }
 }
