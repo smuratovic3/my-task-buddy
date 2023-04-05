@@ -37,24 +37,6 @@ export default class Login extends Component {
             </div>
 
             <div className="mb-3">
-              <label>IME</label>
-              <input
-                type="ime"
-                className="form-control"
-                placeholder="Unesite ime"
-              />
-            </div>
-
-            <div className="mb-3">
-              <label>PREZIME</label>
-              <input
-                type="prezime"
-                className="form-control"
-                placeholder="Unesite prezime"
-              />
-            </div>
-
-            <div className="mb-3">
               <label>E-MAIL ADRESA</label>
               <input
                 type="email"
