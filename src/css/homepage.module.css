@@ -4,39 +4,27 @@
   box-sizing: border-box;
 }
 body {
-  background: #1c8ef9 !important;
+  background: #abdcfd !important;
   min-height: 100vh;
   display: flex;
   font-weight: 400;
   font-family: "Fira Sans", sans-serif;
 }
 
-h1,
-h2,
-h3,
-h4,
-h5,
-h6,
-label,
-span {
-  font-weight: 500;
-  font-family: "Fira Sans", sans-serif;
-}
 
-body,
-html,
-.App,
-#root,
-.wrapper {
-  width: 100%;
-  height: 100%;
-}
 
-.navbar-light {
-  background-color: #ffffff;
-  box-shadow: 0px 14px 80px rgba(34, 35, 58, 0.2);
-}
 
+.addEvent{
+ 
+  position: fixed;
+  top: 100px;
+  left: 20px;
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  z-index: 2;
+  
+}
 .wrapper {
   display: flex;
   justify-content: center;
@@ -45,48 +33,80 @@ html,
 }
 
 .inner {
-    width: 1200px;
-    margin-top: 100px;
-    background: #ffffff;
-    box-shadow: 0px 14px 80px rgba(34, 35, 58, 0.2);
-    padding: 50px 25px 45px 25px;
-    border-radius: 15px;
-    transition: all 0.3s;
-   
-    
-    /* Add these properties to center the form */
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
-  }
-
-.wrapper .form-control:focus {
-  border-color: #167bff;
-  box-shadow: none;
+  width: 1000px;
+  margin: auto;
+  background: #ffffff;
+  box-shadow: 0px 14px 80px rgba(34, 35, 58, 0.2);
+  padding: 50px 25px 45px 25px;
+  border-radius: 15px;
+  transition: all 0.3s;
+  
+  /* Add these properties to center the form */
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
 }
 
-.wrapper h3 {
-  text-align: center;
-  margin: 0;
-  line-height: 1;
-  padding-bottom: 20px;
-}
-
-.custom-control-label {
-  font-weight: 400;
-}
-
-.forgot-password,
-.forgot-password a {
-  text-align: right;
-  font-size: 13px;
-  padding-top: 10px;
-  color: #7f7d7d;
+.menu {
+  list-style-type: none;
+  padding: 0;
   margin: 0;
 }
 
-.forgot-password a {
-  color: #167bff;
+
+
+.navItem {
+  padding: 1rem;
+
 }
 
+
+
+.navItem:last-child {
+  border-bottom: none;
+}
+
+
+.navLink {
+  color: #000000; /* Change color to desired color code */
+  text-decoration: none; /* Remove underline from link */
+  transition: all 0.3s ease; /* Add transition effect */
+}
+
+.navLink:hover {
+  color: #e61515; /* Change color on hover to desired color code */
+  text-decoration: none; /* Remove underline from link */
+}
+.navbar ul {
+  margin-top: 60px;
+}
+.navbar .logo {
+  color: rgb(0, 0, 0);
+}
+
+.logo {
+  display: flex;
+  align-items: center;
+  text-decoration: none;
+  font-size: 30px;
+  font-weight: bold;
+  color: #333;
+  padding-top: 20px;
+  margin-left: 20px;
+}
+
+.logoImage {
+  width: 50px;
+  height: 50px;
+  border-radius: 50%;
+  box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.2);
+}
+
+
+.container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+}
