@@ -7,6 +7,7 @@ import SignUp from "./screens/SignUp";
 import ForgotPassword from "./screens/ForgotPassword";
 import HomePage from "./screens/HomePage";
 import "./index.css";
+import MyProfile from "./screens/MyProfile";
 
 function App() {
   return (
@@ -18,6 +19,7 @@ function App() {
           <Route path="/sign-up" element={<SignUp />} />
           <Route path="/forgot-password" element={<ForgotPassword />} />
           <Route path="/home-page" element={<HomePage />} />
+          <Route path="/my-profil" element={<MyProfile />} />
         </Routes>
       </div>
     </Router>

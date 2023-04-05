@@ -45,7 +45,8 @@ export default class HomePageComponent extends Component {
     });
   };
 
-  handleAddEvent = () => {
+  handleAddEvent = (e) => {
+    e.preventDefault();
     const { allEvents, newEvent } = this.state;
     this.setState(
       {
@@ -186,6 +187,7 @@ export default class HomePageComponent extends Component {
             }}
             onClick={this.handleAddEvent}
           >
+            {" "}
             Dodaj aktivnost
           </button>
         </div>
