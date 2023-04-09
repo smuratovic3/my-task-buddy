@@ -66,7 +66,7 @@ export default class HomePageComponent extends Component {
     return (
       <form>
         <nav className="navbar navbar-expand-lg navbar-light fixed-top">
-          <Link className="navbar-brand" to={"/sign-in"}>
+          <Link className="navbar-brand" to={"/home-page"}>
             <img
               src="/assets/images/logo.png"
               alt="MyTaskBuddy Logo"

@@ -7,7 +7,7 @@ export default class Login extends Component {
     return (
       <form>
         <nav className="navbar navbar-expand-lg navbar-light fixed-top">
-          <Link className="navbar-brand" to={"/sign-in"}>
+          <Link className="navbar-brand" to={"/"}>
             <img
               src="/assets/images/logo.png"
               alt="MyTaskBuddy Logo"
@@ -30,6 +30,7 @@ export default class Login extends Component {
             </li>
           </ul>
         </nav>
+
         <div className={LoginCSS.wrapper}>
           <div className={LoginCSS.inner}>
             <div className="headline">
@@ -65,10 +66,11 @@ export default class Login extends Component {
                 </Link>
               </button>
             </div>
-
+            <br></br>
             <label className="custom-control-label" htmlFor="customCheck1">
               Nemate račun?
             </label>
+
             <div className="d-grid">
               <button type="submit" className="btn btn-danger">
                 <Link
@@ -80,6 +82,7 @@ export default class Login extends Component {
                 </Link>
               </button>
             </div>
+            <br></br>
             <p className="forgot-password text-right">
               Zaboravili ste <Link to="/forgot-password">lozinku?</Link>
             </p>
