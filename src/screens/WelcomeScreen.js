@@ -31,12 +31,16 @@ function WelcomeScreen() {
       </nav>
 
       <div className={WelcomeScreenCSS.container}>
-        <div className={WelcomeScreenCSS.header}>
-          <h1 className="welcomeMessage">
-            Dobrodošli na stranicu MyTaskBuddy!
-          </h1>
-        </div>
+        <h1 className="welcomeMessage">Dobrodošli na stranicu MyTaskBuddy!</h1>
+
         <div className={WelcomeScreenCSS.content}>
+          <img
+            src="/assets/images/symbol.jpg"
+            alt="MyTaskBuddy Logo"
+            width="500"
+            height="450"
+            style={{ padding: "20px" }}
+          />
           <p className={WelcomeScreenCSS.description}>
             MyTaskBuddy vam olakšava planiranje i organiziranje zadataka za
             svoju djecu i praćenje njihovog napretka. Uz prilagođene opcije,
