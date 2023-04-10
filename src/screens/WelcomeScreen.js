@@ -37,7 +37,7 @@ function WelcomeScreen() {
           <img
             src="/assets/images/symbol.jpg"
             alt="MyTaskBuddy Logo"
-            width="500"
+            width="400"
             height="450"
             style={{ padding: "20px" }}
           />
